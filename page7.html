@@ -62,7 +62,6 @@
       background: #ff1493;
     }
 
-    /* Sparkle animation */
     .sparkle {
       position: absolute;
       width: 4px;
@@ -109,8 +108,8 @@
       "Yeh teri aankhein… mujhe khamoshi mein bhi pyaar keh jaati hain."
     </div>
     <div class="controls">
-      <button class="btn" onclick="prevImage()">⟵ Back</button>
-      <button class="btn" onclick="nextImage()">Next ⟶</button>
+      <button class="btn" id="backBtn">⟵ Back</button>
+      <button class="btn" id="nextBtn">Next ⟶</button>
     </div>
   </div>
 
@@ -131,28 +130,27 @@
       document.getElementById("lineText").innerText = "${images[current].line}";
     }
 
-    function nextImage() {
+    document.getElementById("nextBtn").addEventListener("click", () => {
       if (current < images.length - 1) {
         current++;
         updateCarousel();
       } else {
-        // Last image ke baad page8.html par jaaye
-        window.location.href = 'page8.html';
+        window.location.href = 'page8.html'; // ✅ Redirect on last image
       }
-    }
+    });
 
-    function prevImage() {
+    document.getElementById("backBtn").addEventListener("click", () => {
       if (current > 0) {
         current--;
         updateCarousel();
       }
-    }
+    });
 
     updateCarousel();
 
-    // Sparkle Animation
+    // Sparkle Effect
     const sparkleContainer = document.getElementById('sparkleContainer');
-    for(let i = 0; i < 100; i++) {
+    for (let i = 0; i < 100; i++) {
       const sparkle = document.createElement('div');
       sparkle.classList.add('sparkle');
       sparkle.style.left = ${Math.random() * 100}%;

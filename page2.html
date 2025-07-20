@@ -86,7 +86,7 @@
     Jab tumhe pehli baar dekha… duniya ruk gayi thi.
   </div>
 
- 
+  <button id="nextBtn" onclick="goToNextPage()">Next</button>
 
   <script>
     const kajalPic = document.getElementById('kajalPic');
@@ -94,7 +94,6 @@
     const nextBtn = document.getElementById('nextBtn');
     const heartbeat = document.getElementById('heartbeat');
 
-    // Play music with volume control
     heartbeat.volume = 0.4;
 
     // Blur clear after 1.5s
@@ -112,8 +111,8 @@
       nextBtn.classList.add('show');
     }, 5000);
 
-    function goToNextPage(){
-        window.location.href="page3.html"
+    function goToNextPage() {
+      window.location.href = "page3.html";
     }
   </script>
 </body>

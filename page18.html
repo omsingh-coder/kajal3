@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 18 - Top Fold Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      perspective: 1200px;
+    }
+
+    .photo {
+      width: 300px;
+      height: 400px;
+      background-image: url('kajal18.jpg'); /* Replace with actual photo */
+      background-size: cover;
+      background-position: center;
+      transform-origin: top center;
+      transform: rotateX(90deg);
+      animation: foldDown 2.5s ease-out forwards;
+      box-shadow: 0 20px 60px rgba(255, 0, 0, 0.5);
+      border-radius: 12px;
+    }
+
+    @keyframes foldDown {
+      0% {
+        transform: rotateX(90deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotateX(0deg);
+        opacity: 1;
+      }
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 40px;
+      font-size: 1.8rem;
+      color: white;
+      text-align: center;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      text-shadow: 2px 2px 5px red;
+      animation: fadeIn 3s ease-in 2s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .next-btn {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: crimson;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      z-index: 10;
+    }
+
+    .next-btn:hover {
+      background: #ff2e63;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="photo"></div>
+    <div class="caption">"Har pal tujhmein simat gaya hai..."</div>
+  </div>
+
+  <button class="next-btn" onclick="window.location.href='page19.html'">Next ➤</button>
+</body>
+</html>

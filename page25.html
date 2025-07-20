@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 25 - The Beginning</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #1c1c1c, #000000);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 3s ease-in-out;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: glow 2s infinite alternate;
+    }
+
+    p {
+      font-size: 1.4em;
+      margin: 10px 0;
+      color: #ddd;
+      animation: typing 4s steps(40, end), blink 0.7s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #ff4b2b;
+      width: 0;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: #ff416c;
+      border: none;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff416caa;
+      transition: 0.4s ease;
+    }
+
+    button:hover {
+      background: #ff4b2b;
+      box-shadow: 0 0 25px #ff4b2b;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff416c, 0 0 20px #ff4b2b; }
+      to { text-shadow: 0 0 25px #ff416c, 0 0 35px #ff4b2b; }
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: moveStars 10s linear infinite;
+    }
+
+    @keyframes moveStars {
+      from {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(110vh);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>The End? No…</h1>
+  <p>Aakhir me ek hi baat kehni thi…</p>
+  <p style="animation-delay: 4.2s">Tera Om hamesha tera rahega… tum sirf haan keh do</p>
+
+  <button onclick="replayJourney()">🎬 Replay this Journey</button>
+
+  <div class="stars" id="starContainer"></div>
+
+  <script>
+    function replayJourney() {
+      window.location.href = "index.html"; // Replace with your first page's filename
+    }
+
+    // Stars animation
+    const starContainer = document.getElementById('starContainer');
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.left = ${Math.random() * 100}vw;
+      star.style.top = ${Math.random() * 100}vh;
+      star.style.animationDuration = ${5 + Math.random() * 10}s;
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>

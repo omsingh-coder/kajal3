@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 4 – Tum Mujhe Samajhti Ho?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffefba, #ffffff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #b91c1c;
+      text-shadow: 0 0 5px #fda4af;
+    }
+
+    .question {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #fff0f4;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #fcd5ce;
+      width: 80%;
+      max-width: 600px;
+    }
+
+    .question p {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .options button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background-color: #f472b6;
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .options button:hover {
+      background-color: #ec4899;
+    }
+
+    .options button.correct {
+      background-color: #22c55e;
+    }
+
+    #nextBtn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #ec4899;
+      border: none;
+      color: white;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .flower {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+      background-size: cover;
+      pointer-events: none;
+      animation: float 3s ease-in forwards;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-200px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tum Mujhe Samajhti Ho?</h1>
+
+  <div class="question" id="q1">
+    <p>1. Mera sabse yaadgaar pal kya tha?</p>
+    <div class="options">
+      <button onclick="check(this, true)">Tujhe pehli baar dekhna 💘</button>
+      <button onclick="check(this, false)">Tera last seen dekhna 😂</button>
+      <button onclick="check(this, false)">Tujhse door hona 😢</button>
+    </div>
+  </div>
+
+  <div class="question" id="q2">
+    <p>2. Teri muskaan mujhe kya mehsoos karwati hai?</p>
+    <div class="options">
+      <button onclick="check(this, true)">Zindagi jeene ki wajah 😍</button>
+      <button onclick="check(this, false)">Sirf pyaari lagti hai</button>
+      <button onclick="check(this, false)">Thoda confuse kar deti hai</button>
+    </div>
+  </div>
+
+  <div class="question" id="q3">
+    <p>3. Main tujhe sabse zyada kab yaad karta hoon?</p>
+    <div class="options">
+      <button onclick="check(this, true)">Har pal, bina kisi wajah ke 💖</button>
+      <button onclick="check(this, false)">Sirf raat ko</button>
+      <button onclick="check(this, false)">Jab udaas hota hoon</button>
+    </div>
+  </div>
+
+  <!-- 🔁 Changed only this line -->
+  <button id="nextBtn" onclick="location.href='page5.html'">Next</button>
+
+  <script>
+    let correctCount = 0;
+
+    function check(btn, isCorrect) {
+      if (btn.classList.contains("correct")) return;
+
+      if (isCorrect) {
+        btn.classList.add("correct");
+        correctCount++;
+        dropFlower();
+      } else {
+        btn.style.background = "#f87171"; // red
+      }
+
+      if (correctCount >= 3) {
+        document.getElementById("nextBtn").style.display = "block";
+      }
+    }
+
+    function dropFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.top = "100vh";
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

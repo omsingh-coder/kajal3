@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAJAL – Tumse Hi Hai Zindagi</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      background: linear-gradient(to bottom, #090909, #1e1e1e);
+      color: white;
+      overflow: hidden;
+    }
+    .page {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 3s ease-in-out;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      animation: textGlow 3s ease-in-out infinite alternate;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 3s forwards;
+    }
+    button {
+      margin-top: 50px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: #ff3c72;
+      border: none;
+      border-radius: 50px;
+      color: white;
+      cursor: pointer;
+      animation: slideUp 2s ease 5s forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes textGlow {
+      0% { text-shadow: 0 0 10px #ff4081; }
+      100% { text-shadow: 0 0 20px #ff3c72, 0 0 30px #ff4081; }
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" id="page1">
+    <h1>A True Love Story by Om Singh</h1>
+    <div class="subtitle">Inspired by Kajal 💖</div>
+    <button onclick="nextPage()">Start the Journey</button>
+  </div>
+
+  <script>
+    function nextPage() {
+      // Yahan pe next page ka code inject hoga next steps me
+      window.location.href="page2.html";
+    }
+  </script>
+</body>
+</html>  

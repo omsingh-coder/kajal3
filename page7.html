@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 5 - Photo & Quote Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      padding-top: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-box {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .line {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: 500;
+      padding: 0 20px;
+    }
+
+    .controls {
+      margin-top: 30px;
+    }
+
+    .btn {
+      background: #ff69b4;
+      border: none;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff1493;
+    }
+
+    /* Sparkle animation */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      border-radius: 50%;
+      animation: sparkle 3s infinite;
+    }
+
+    @keyframes sparkle {
+      0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(-100px) scale(1.5);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    #sparkleContainer {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="sparkleContainer"></div>
+
+  <div class="container">
+    <div class="photo-box">
+      <img id="photo" src="kajal1.jpg" alt="Kajal">
+    </div>
+    <div class="line" id="lineText">
+      "Yeh teri aankhein… mujhe khamoshi mein bhi pyaar keh jaati hain."
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="prevImage()">⟵ Back</button>
+      <button class="btn" onclick="nextImage()">Next ⟶</button>
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      { src: "kajal1.jpg", line: "Yeh teri aankhein… mujhe khamoshi mein bhi pyaar keh jaati hain." },
+      { src: "kajal2.jpg", line: "Yeh tera simple sa pose… dil ko ek sukoon deta hai." },
+      { src: "kajal3.jpg", line: "Teri hansi… jaise chandni raat mein sitaaron ka raag." },
+      { src: "kajal4.jpg", line: "Tujhe dekhkar lagta hai… main har pal tujhme kho gaya hoon." },
+      { src: "kajal5.jpg", line: "Tere chehre pe noor hai… jaise koi roshni meri raaton ka savera ho." },
+      { src: "kajal6.jpg", line: "Teri har tasveer mein ek kahani chhupi hoti hai… sirf mere liye." }
+    ];
+
+    let current = 0;
+
+    function updateCarousel() {
+      document.getElementById("photo").src = images[current].src;
+      document.getElementById("lineText").innerText = "${images[current].line}";
+    }
+
+    function nextImage() {
+      if (current < images.length - 1) {
+        current++;
+        updateCarousel();
+      } else {
+        // Last image ke baad page8.html par jaaye
+        window.location.href = 'page8.html';
+      }
+    }
+
+    function prevImage() {
+      if (current > 0) {
+        current--;
+        updateCarousel();
+      }
+    }
+
+    updateCarousel();
+
+    // Sparkle Animation
+    const sparkleContainer = document.getElementById('sparkleContainer');
+    for(let i = 0; i < 100; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = ${Math.random() * 100}%;
+      sparkle.style.top = ${Math.random() * 100}%;
+      sparkle.style.animationDuration = ${2 + Math.random() * 3}s;
+      sparkleContainer.appendChild(sparkle);
+    }
+  </script>
+</body>
+</html>

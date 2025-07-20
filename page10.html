@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 10 - Dream Future</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to top, #0b0c10, #1f2833);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+    }
+
+    .moon {
+      position: absolute;
+      top: 50px;
+      right: 80px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #fff 40%, #ddd 70%, transparent 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 30px #fff;
+      z-index: 0;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      z-index: 0;
+    }
+
+    .stars::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: #fff;
+      box-shadow:
+        50px 100px #fff,
+        150px 200px #fff,
+        250px 120px #fff,
+        350px 300px #fff,
+        450px 220px #fff,
+        550px 180px #fff,
+        650px 250px #fff,
+        750px 100px #fff,
+        850px 160px #fff,
+        950px 230px #fff;
+      animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .couple {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      background: url('https://i.postimg.cc/3JyJWDyY/couple-silhouette.png') no-repeat center/contain;
+      animation: float 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-10px); }
+    }
+
+    .road {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, #444, transparent);
+      z-index: 1;
+    }
+
+    .text {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 1.6rem;
+      font-style: italic;
+      color: #fffc;
+      text-shadow: 0 0 5px #fff, 0 0 10px #fffa;
+      padding: 0 20px;
+      z-index: 3;
+    }
+
+    .next-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #ff69b4;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4;
+      z-index: 5;
+    }
+
+    .next-btn:hover {
+      background: #ff85c1;
+    }
+  </style>
+</head>
+<body>
+  <div class="moon"></div>
+  <div class="stars"></div>
+  <div class="couple"></div>
+  <div class="road"></div>
+  <div class="text">
+    “Main tujhe zindagi bhar ka saath dena chahta hoon…”
+  </div>
+  <button class="next-btn" onclick="window.location.href='page11.html'">Next ➜</button>
+</body>
+</html>

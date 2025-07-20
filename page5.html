@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 5 - Just You</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-family: 'Zeyada', cursive;
+      font-size: 3.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid rgba(255,255,255,0.8);
+      width: 0;
+      animation: typing 5s steps(40, end) forwards, blink 0.7s step-end infinite;
+      color: #fff;
+      text-shadow: 0 0 10px #ff99cc, 0 0 20px #ff66cc, 0 0 30px #ff3399;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #fff; }
+    }
+
+    .next-btn {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .next-btn a {
+      padding: 12px 24px;
+      background: #ff3399;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      box-shadow: 0 0 15px #ff66cc;
+      transition: 0.3s ease;
+    }
+
+    .next-btn a:hover {
+      background: #e60073;
+      box-shadow: 0 0 20px #ff66cc, 0 0 30px #ff66cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Page 5: And slowly, everything started to feel like it's about you.</h1>
+    <div class="next-btn">
+      <a href="page6.html">Next →</a>
+    </div>
+  </div>
+</body>
+</html>

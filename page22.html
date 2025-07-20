@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 22 - Blur to Clear Photo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(#000000, #1a1a1a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* PHOTO ANIMATION */
+    .blur-reveal {
+      width: 280px;
+      height: 360px;
+      background-image: url('images/kajal9.jpg'); /* 🖼 Replace with Kajal's image path */
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      filter: blur(20px);
+      box-shadow: 0 0 15px #ff007f;
+      animation: revealPhoto 2.5s ease forwards;
+      transition: filter 2.5s ease, box-shadow 2s ease;
+    }
+
+    @keyframes revealPhoto {
+      0% {
+        filter: blur(20px);
+        box-shadow: 0 0 15px #ff007f;
+      }
+      100% {
+        filter: blur(0px);
+        box-shadow: 0 0 40px #ff007f, 0 0 15px #ff4f9f inset;
+      }
+    }
+
+    /* TEXT ANIMATION */
+    .caption {
+      margin-top: 30px;
+      color: #ffffff;
+      font-size: 22px;
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      text-shadow: 1px 1px 10px #ff69b4;
+      opacity: 0;
+      animation: fadeInText 2s ease 2.5s forwards;
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* BUTTON STYLE */
+    .next-btn {
+      margin-top: 50px;
+      background: #ff007f;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px #ff007f;
+    }
+
+    .next-btn:hover {
+      background: #e6006f;
+      box-shadow: 0 0 20px #ff1493;
+    }
+  </style>
+  <script>
+    function goToPage(num) {
+      window.location.href = "page" + num + ".html";
+    }
+  </script>
+</head>
+<body>
+  <div id="page22" class="page">
+    <!-- IMAGE + TEXT -->
+    <div class="blur-reveal"></div>
+    <div class="caption">“Kajal, tu meri zindagi ki sabse khoobsurat tasveer hai…”</div>
+
+    <!-- BUTTON -->
+    <button class="next-btn" onclick="goToPage(23)">Next ➤</button>
+  </div>
+</body>
+</html>

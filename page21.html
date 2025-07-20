@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 21</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .photo-frame {
+      width: 260px;
+      height: 260px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px #ff99cc;
+      animation: float 5s ease-in-out infinite;
+      margin-bottom: 30px;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .message {
+      color: #fff;
+      font-size: 26px;
+      text-align: center;
+      padding: 0 20px;
+      text-shadow: 0 0 10px #ff99cc;
+      animation: fadeIn 2.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .next-btn {
+      margin-top: 40px;
+      padding: 12px 30px;
+      background-color: #ff0080;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px #ff0080;
+    }
+
+    .next-btn:hover {
+      background-color: #ff4da6;
+      box-shadow: 0 0 15px #ff4da6;
+    }
+  </style>
+</head>
+<body>
+  <div class="photo-frame">
+    <img src="your-image.jpg" alt="Us">
+    <!-- NOTE: Replace 'your-image.jpg' with your own image filename -->
+  </div>
+
+  <div class="message">
+    Every smile of yours makes my heart lighter.<br>
+    I just wish... I could be the reason for them forever.
+  </div>
+
+  <button class="next-btn" onclick="window.location.href='page22.html'">Next</button>
+</body>
+</html>

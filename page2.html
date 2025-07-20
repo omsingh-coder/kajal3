@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 2 – Pehli Nazar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #ffdde1, #ee9ca7);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .kajal-pic {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background-image: url('kajal-blur.jpg'); /* Replace with Kajal's blurred photo */
+      background-size: cover;
+      background-position: center;
+      filter: blur(15px);
+      transition: filter 2s ease;
+      margin-bottom: 30px;
+      box-shadow: 0 0 20px #fff8f8a1;
+    }
+
+    .kajal-pic.clear {
+      filter: blur(0);
+    }
+
+    .line {
+      font-size: 1.8rem;
+      color: #6b021b;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 10px #ffffff;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+
+    .line.show {
+      opacity: 1;
+    }
+
+    button {
+      margin-top: 50px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      background: #d63484;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    button.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="heartbeat" autoplay loop>
+    <source src="heartbeat.mp3" type="audio/mpeg" />
+    <!-- Tum yahan apna heartbeat file add karo -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="kajal-pic" id="kajalPic"></div>
+
+  <div class="line" id="nazarlove">
+    Jab tumhe pehli baar dekha… duniya ruk gayi thi.
+  </div>
+
+  <button id="nextBtn" onclick="alert('Page 3 ke liye mujhe bolo: Next Page do')">Next</button>
+
+  <script>
+    const kajalPic = document.getElementById('kajalPic');
+    const line = document.getElementById('nazarlove');
+    const nextBtn = document.getElementById('nextBtn');
+    const heartbeat = document.getElementById('heartbeat');
+
+    // Play music with volume control
+    heartbeat.volume = 0.4;
+
+    // Blur clear after 1.5s
+    setTimeout(() => {
+      kajalPic.classList.add('clear');
+    }, 1500);
+
+    // Line appear after 3s
+    setTimeout(() => {
+      line.classList.add('show');
+    }, 3000);
+
+    // Button show after 5s
+    setTimeout(() => {
+      nextBtn.classList.add('show');
+    }, 5000);
+
+    function goToNextPage(){
+        window.location.href="page3.html"
+    }
+  </script>
+</body>
+</html>

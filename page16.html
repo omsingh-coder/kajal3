@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page 16 - Rotate & Bounce</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .photo-container {
+      animation: rotateBounce 3s ease forwards;
+    }
+    .photo {
+      width: 80vmin;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 30px red;
+    }
+    @keyframes rotateBounce {
+      0% {
+        transform: rotate(-360deg) scale(0);
+        opacity: 0;
+      }
+      60% {
+        transform: rotate(30deg) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(0deg) scale(1);
+      }
+    }
+    .next-btn {
+      position: absolute;
+      bottom: 30px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="photo-container">
+    <img src="kajal_photo_3.jpg" alt="Kajal Rotate Bounce" class="photo" />
+  </div>
+  <button class="next-btn" onclick="window.location.href='page17.html'">Next</button>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Promise Page - Kajal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #fbeeff, #ffe6f6);
+      font-family: 'Indie Flower', cursive;
+      color: #5d004f;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #ff1493;
+      text-shadow: 1px 1px 3px #ff99cc;
+    }
+
+    .promise-box {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 15px;
+      background-color: #fff0f8;
+      box-shadow: 0 0 10px rgba(255, 0, 128, 0.3);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .promise {
+      margin: 15px 0;
+      font-size: 1.3rem;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .promise.visible {
+      opacity: 1;
+    }
+
+    #acceptBtn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+      transition: 0.3s;
+    }
+
+    #acceptBtn:hover {
+      background-color: #ff1493;
+    }
+
+    #nextBtn {
+      margin-top: 20px;
+      display: none;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      background-color: #8e44ad;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Promises to You, Kajal 💖</h1>
+
+  <div class="promise-box">
+    <div class="promise" id="p1">1. Main hamesha tera saath dunga 🤝</div>
+    <div class="promise" id="p2">2. Main tujhe bina wajah hasaunga 😄</div>
+    <div class="promise" id="p3">3. Tere bina kuch nahi chahunga ❤️</div>
+    <div class="promise" id="p4">4. Main tere har sapne mein saath dunga 🌈</div>
+    <div class="promise" id="p5">5. Main tujhe kabhi hurt nahi karunga, chahe kuch bhi ho 🌹</div>
+    
+    <button id="acceptBtn">I Accept 💌</button>
+    <button id="nextBtn" onclick="goToNextPage()">Next Page ➡️</button>
+  </div>
+
+  <script>
+    const promises = [
+      document.getElementById("p1"),
+      document.getElementById("p2"),
+      document.getElementById("p3"),
+      document.getElementById("p4"),
+      document.getElementById("p5"),
+    ];
+
+    let current = 0;
+
+    function showNextPromise() {
+      if (current < promises.length) {
+        promises[current].classList.add("visible");
+        current++;
+        setTimeout(showNextPromise, 1200);
+      }
+    }
+
+    window.onload = showNextPromise;
+
+    document.getElementById("acceptBtn").addEventListener("click", function () {
+      document.getElementById("nextBtn").style.display = "inline-block";
+      this.innerText = "Accepted ✅";
+      this.disabled = true;
+    });
+
+    function goToNextPage() {
+      window.location.href = "page12.html"; // Replace with actual next page
+    }
+  </script>
+</body>
+</html>

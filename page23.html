@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 23 - Kajal ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #0d0d0d, #1a001a);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .page {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .slide-reveal {
+      position: relative;
+      width: 280px;
+      height: 360px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 25px #ff4f9f;
+      animation: glow 2s infinite alternate;
+    }
+
+    .slide-reveal img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translateX(-100%);
+      animation: slideIn 2s ease forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 10px #ff4f9f;
+      }
+      100% {
+        box-shadow: 0 0 30px #ff4f9f, 0 0 15px #ff4f9f inset;
+      }
+    }
+
+    .caption {
+      margin-top: 30px;
+      font-size: 22px;
+      font-family: 'Dancing Script', cursive;
+      color: #ffffff;
+      text-shadow: 1px 1px 10px #ff69b4;
+      opacity: 0;
+      animation: fadeInText 2s ease 2s forwards;
+    }
+
+    @keyframes fadeInText {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .next-btn {
+      margin-top: 50px;
+      background: #ff007f;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 0 10px #ff007f;
+    }
+
+    .next-btn:hover {
+      background: #e6006f;
+      box-shadow: 0 0 20px #ff1493;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="page23" class="page">
+    <!-- SLIDING IMAGE -->
+    <div class="slide-reveal">
+      <img src="images/kajal10.jpg" alt="Kajal photo"> <!-- 🖼 Replace with Kajal's image -->
+    </div>
+
+    <!-- CAPTION TEXT -->
+    <div class="caption">“Tujh jaisa noor sirf meri duniya mein chamak sakta hai...”</div>
+
+    <!-- NEXT BUTTON -->
+    <button class="next-btn" onclick="goToPage(24)">Next ➤</button>
+  </div>
+
+  <!-- JS for Page Navigation -->
+  <script>
+    function goToPage(pageNumber) {
+      window.location.href = page${pageNumber}.html;
+    }
+  </script>
+</body>
+</html>

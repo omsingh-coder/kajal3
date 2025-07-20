@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 9: Magic by Her Name</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle, #140a27, #000);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    .name {
+      font-size: 60px;
+      font-weight: bold;
+      color: #ff69b4;
+      text-shadow: 0 0 20px #ff69b4, 0 0 40px #ff69b4;
+      letter-spacing: 10px;
+      opacity: 0;
+      animation: typing 4s steps(5) forwards, glow 2s infinite alternate;
+    }
+
+    @keyframes typing {
+      from { opacity: 0; width: 0 }
+      to { opacity: 1; width: 100% }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff69b4; }
+      to { text-shadow: 0 0 30px #ff69b4, 0 0 60px #ff69b4; }
+    }
+
+    .quote {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #ffccee;
+      text-shadow: 0 0 10px #ff99cc;
+      animation: fadeIn 3s ease-in 4s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatHearts 6s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .next-btn {
+      margin-top: 40px;
+      padding: 12px 25px;
+      font-size: 18px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff69b4;
+      animation: fadeIn 2s ease-in 6s forwards;
+      opacity: 0;
+    }
+
+    .firefly {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: yellow;
+      border-radius: 50%;
+      box-shadow: 0 0 10px yellow;
+      animation: flicker 1.5s infinite alternate ease-in-out;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.3; box-shadow: 0 0 3px yellow; }
+      100% { opacity: 1; box-shadow: 0 0 15px yellow; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="name" id="name">KAJAL</div>
+    <div class="quote">“Tere naam se mere dil ki har dhadkan chalti hai…”</div>
+    <button class="next-btn" onclick="goNext()">Next Page</button>
+  </div>
+
+  <div class="hearts" id="hearts"></div>
+  <script>
+    function createHearts() {
+      const heartsContainer = document.getElementById('hearts');
+      for (let i = 0; i < 25; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = 4 + Math.random() * 3 + 's';
+        heartsContainer.appendChild(heart);
+      }
+    }
+
+    function createFireflies() {
+      for (let i = 0; i < 20; i++) {
+        const firefly = document.createElement('div');
+        firefly.classList.add('firefly');
+        firefly.style.top = Math.random() * window.innerHeight + 'px';
+        firefly.style.left = Math.random() * window.innerWidth + 'px';
+        firefly.style.animationDelay = Math.random() + 's';
+        firefly.style.animationDuration = 2 + Math.random() * 3 + 's';
+        document.body.appendChild(firefly);
+      }
+    }
+
+    function goNext() {
+      // Replace this with your actual next page
+      window.location.href="page10.html";
+    }
+
+createHearts();
+    createFireflies();
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page 3 – Uske Naam Se Mohabbat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #000000, #1a1a1a);
+      color: white;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      position: relative;
+    }
+
+    .kajal-name {
+      font-size: 4rem;
+      font-weight: bold;
+      color: gold;
+      text-shadow: 0 0 20px #ffd700, 0 0 40px #ffcc00;
+      animation: glow 3s infinite alternate;
+      z-index: 2;
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px #ffdb58, 0 0 20px #ffcc00;
+      }
+      100% {
+        text-shadow: 0 0 25px #ffe135, 0 0 40px #ffd700;
+      }
+    }
+
+    .photo-glow {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-image: url('kajal.jpg'); /* Replace with Kajal's real photo */
+      background-size: cover;
+      background-position: center;
+      margin-top: 30px;
+      box-shadow: 0 0 30px 10px #ffbf00;
+      border: 3px solid #fff;
+      z-index: 2;
+    }
+
+    .line {
+      font-size: 1.4rem;
+      color: #ffd6d6;
+      margin-top: 25px;
+      text-align: center;
+      text-shadow: 0 0 10px #ff66cc;
+      z-index: 2;
+    }
+
+    button {
+      margin-top: 50px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background: #d63484;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    /* Heart particle animation */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+      background-size: cover;
+      animation: float 6s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Heart floating animation layer -->
+  <div class="hearts" id="hearts"></div>
+
+  <div class="kajal-name">KAJAL</div>
+
+  <div class="photo-glow"></div>
+
+  <div class="line">Tera naam sirf tere liye nahi, meri har dua mein hai.</div>
+
+  <button onclick="goToNextPage()">Next</button>
+
+  <script>
+    // Heart particles generator
+    const hearts = document.getElementById("hearts");
+
+    for (let i = 0; i < 30; i++) {
+      let span = document.createElement("span");
+      span.style.left = Math.random() * 100 + "vw";
+      span.style.animationDuration = (3 + Math.random() * 3) + "s";
+      span.style.width = span.style.height = (10 + Math.random() * 15) + "px";
+      hearts.appendChild(span);
+    }
+
+    function goToNextPage() {
+      window.location.href = "page4.html";
+    }
+  </script>
+</body>
+</html>

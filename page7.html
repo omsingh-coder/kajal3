@@ -42,20 +42,21 @@
       padding: 0 20px;
     }
 
-    .controls {
-      margin-top: 30px;
+    .next-button {
+      margin-top: 40px;
     }
 
     .btn {
       background: #ff69b4;
       border: none;
       color: white;
-      font-size: 16px;
-      padding: 10px 20px;
-      margin: 0 10px;
-      border-radius: 10px;
+      font-size: 18px;
+      padding: 12px 30px;
+      border-radius: 12px;
       cursor: pointer;
       transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
 
     .btn:hover {
@@ -102,53 +103,18 @@
 
   <div class="container">
     <div class="photo-box">
-      <img id="photo" src="kajal1.jpg" alt="Kajal">
+      <img src="kajal1.jpg" alt="Kajal">
     </div>
-    <div class="line" id="lineText">
+    <div class="line">
       "Yeh teri aankhein… mujhe khamoshi mein bhi pyaar keh jaati hain."
     </div>
-    <div class="controls">
-      <button class="btn" id="backBtn">⟵ Back</button>
-      <button class="btn" id="nextBtn">Next ⟶</button>
+    <div class="next-button">
+      <a href="page8.html" class="btn">Next Page ➜</a>
     </div>
   </div>
 
   <script>
-    const images = [
-      { src: "kajal1.jpg", line: "Yeh teri aankhein… mujhe khamoshi mein bhi pyaar keh jaati hain." },
-      { src: "kajal2.jpg", line: "Yeh tera simple sa pose… dil ko ek sukoon deta hai." },
-      { src: "kajal3.jpg", line: "Teri hansi… jaise chandni raat mein sitaaron ka raag." },
-      { src: "kajal4.jpg", line: "Tujhe dekhkar lagta hai… main har pal tujhme kho gaya hoon." },
-      { src: "kajal5.jpg", line: "Tere chehre pe noor hai… jaise koi roshni meri raaton ka savera ho." },
-      { src: "kajal6.jpg", line: "Teri har tasveer mein ek kahani chhupi hoti hai… sirf mere liye." }
-    ];
-
-    let current = 0;
-
-    function updateCarousel() {
-      document.getElementById("photo").src = images[current].src;
-      document.getElementById("lineText").innerText = "${images[current].line}";
-    }
-
-    document.getElementById("nextBtn").addEventListener("click", () => {
-      if (current < images.length - 1) {
-        current++;
-        updateCarousel();
-      } else {
-        window.location.href = 'page8.html'; // ✅ Redirect on last image
-      }
-    });
-
-    document.getElementById("backBtn").addEventListener("click", () => {
-      if (current > 0) {
-        current--;
-        updateCarousel();
-      }
-    });
-
-    updateCarousel();
-
-    // Sparkle Effect
+    // Sparkle Animation
     const sparkleContainer = document.getElementById('sparkleContainer');
     for (let i = 0; i < 100; i++) {
       const sparkle = document.createElement('div');
